@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class UserController {
+@RequestMapping("/test")
+public class TestUserController {
 
     private static List<UserDTO> users = new ArrayList<>();
 
