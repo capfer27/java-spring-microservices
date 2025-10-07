@@ -14,7 +14,8 @@ public class UserMapper {
             user.getAddress(),
             user.getEmail(),
             user.getPhone(),
-            user.getCreatedAt()
+            user.getCreatedAt(),
+            user.getKey()
         );
     }
 
@@ -26,6 +27,7 @@ public class UserMapper {
         user.setAddress(userDTO.address());
         user.setPhone(userDTO.phone());
         user.setCreatedAt(userDTO.createdAt());
+        user.setKey(userDTO.key());
         return user;
     }
 }

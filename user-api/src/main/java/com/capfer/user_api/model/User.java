@@ -2,7 +2,7 @@ package com.capfer.user_api.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -30,7 +30,10 @@ public class User {
     private String phone;
 
     @Column(name = "created_at")
-    private Date createdAt;
+    private LocalDateTime createdAt;
+
+    @Column(name = "key")
+    private String key;
 
     public Long getId() {
         return id;
@@ -80,24 +83,35 @@ public class User {
         this.phone = phone;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(cpf, user.cpf) && Objects.equals(address, user.address) && Objects.equals(email, user.email) && Objects.equals(phone, user.phone) && Objects.equals(createdAt, user.createdAt);
+        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(cpf, user.cpf)
+                && Objects.equals(address, user.address) && Objects.equals(email, user.email)
+                && Objects.equals(phone, user.phone) && Objects.equals(createdAt, user.createdAt)
+                && Objects.equals(key, user.getKey());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, cpf, address, email, phone, createdAt);
+        return Objects.hash(id, name, cpf, address, email, phone, createdAt, key);
     }
 
     @Override

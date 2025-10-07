@@ -33,6 +33,12 @@ public class UserController {
         return userService.save(userDTO);
     }
 
+    @PostMapping("/users/{id}")
+    public UserDTO editUser(@PathVariable("id") Long id, @RequestBody UserDTO userDTO) {
+        UserDTO editUser = userService.editUser(id, userDTO);
+        return editUser;
+    }
+
     @GetMapping("/users/cpf/{cpf}")
     public UserDTO findByCpf(@PathVariable String cpf) {
         return userService.findByCpf(cpf);

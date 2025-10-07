@@ -3,6 +3,7 @@ package com.capfer.user_api.dto;
 import com.capfer.user_api.mapper.UserMapper;
 import com.capfer.user_api.model.User;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -20,12 +21,13 @@ public record UserDTO(
         String address,
         String email,
         String phone,
-        Date createdAt
+        LocalDateTime createdAt,
+        String key
 ) {
 
     // Temporary Fix - better use
     @Override
-    public Date createdAt() {
-        return createdAt == null ? new Date() : createdAt;
+    public LocalDateTime createdAt() {
+        return createdAt == null ? LocalDateTime.now() : createdAt;
     }
 }
