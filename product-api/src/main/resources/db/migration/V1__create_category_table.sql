@@ -1,0 +1,6 @@
+CREATE SCHEMA IF NOT EXISTS products;
+
+CREATE TABLE IF NOT EXISTS products.category (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
