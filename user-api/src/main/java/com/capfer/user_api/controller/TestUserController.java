@@ -1,7 +1,7 @@
 package com.capfer.user_api.controller;
 
 import com.capfer.user_api.dto.UserDTO;
-import com.capfer.user_api.futures.UserFixtures;
+import com.capfer.user_api.fixtures.UserFixtures;
 import com.capfer.user_api.util.UserUtil;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.*;

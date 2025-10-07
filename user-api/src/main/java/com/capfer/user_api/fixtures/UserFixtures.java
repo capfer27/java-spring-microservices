@@ -1,4 +1,4 @@
-package com.capfer.user_api.futures;
+package com.capfer.user_api.fixtures;
 
 import com.capfer.user_api.dto.UserDTO;
 

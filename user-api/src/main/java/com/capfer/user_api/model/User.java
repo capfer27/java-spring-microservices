@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "users")
+@Table(name = "`user`")
 public class User {
 
     @Id
